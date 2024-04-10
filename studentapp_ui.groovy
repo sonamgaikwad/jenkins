@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Pull') {
             steps {
-                git changelog: false, poll: false, url: 'https://github.com/sonamgaikwad/studentapp.ui.git'
+                 git 'https://github.com/sonamgaikwad/studentapp.ui.git'
                 echo 'Yes, Application repository pull is done !'
             }
         }
