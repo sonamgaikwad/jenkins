@@ -4,13 +4,13 @@ pipeline {
     stages {
         stage('Pull') {
             steps {
-                 git 'https://github.com/sonamgaikwad/studentapp.ui.git'
+                 git changelog: false, poll: false, url: 'https://github.com/sonamgaikwad/studentapp.ui'
                 echo 'Yes, Application repository pull is done !'
             }
         }
         stage('Build') {
             steps {
-                sh '''/opt/apache-maven-3.9.6/bin/mvn clean package'''
+                sh '/opt/apache-maven-3.9.6/bin/mvn clean package'
                 echo 'Yes, Application Build is done !'
             }
         }
